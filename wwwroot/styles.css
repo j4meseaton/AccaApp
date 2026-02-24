@@ -1,0 +1,156 @@
+:root {
+  --bg-a: #0a1218;
+  --bg-b: #162832;
+  --card: #f5f7f8;
+  --ink: #0d171e;
+  --muted: #4c5a65;
+  --accent: #dd5d29;
+  --accent-2: #f3c66a;
+  --ok: #1e8a45;
+  --line: #d8dee3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 10% 10%, #1c3e50, transparent 40%),
+    radial-gradient(circle at 90% 15%, #734223, transparent 30%),
+    linear-gradient(135deg, var(--bg-a), var(--bg-b));
+}
+
+.app {
+  width: min(1100px, 94vw);
+  margin: 2rem auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.hero {
+  color: #edf4f8;
+  padding: 0.4rem 0.2rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+}
+
+.hero p {
+  margin: 0.4rem 0 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.panel {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 14px 30px rgb(0 0 0 / 18%);
+  padding: 1rem;
+}
+
+.controls {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.control-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.control-row {
+  display: grid;
+  gap: 0.35rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.6rem 0.7rem;
+  background: #fff;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 0.72rem 1rem;
+  background: linear-gradient(125deg, var(--accent), var(--accent-2));
+  color: #121212;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: saturate(1.1) brightness(1.05);
+}
+
+.status {
+  margin: 0;
+  color: var(--muted);
+}
+
+h2 {
+  margin: 0 0 0.7rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.2rem;
+}
+
+.summary {
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
+
+.picks,
+.fixtures {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.pick,
+.fixture {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  background: #fff;
+}
+
+.pick strong {
+  color: var(--ok);
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 720px) {
+  .app {
+    margin: 1rem auto;
+  }
+
+  .panel {
+    padding: 0.85rem;
+  }
+}

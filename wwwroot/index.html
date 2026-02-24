@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AccaApp - Weekly Accumulator Helper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <h1>Weekly Acca Selector</h1>
+        <p>All English top 4 leagues at 3pm, ranked by likely winners.</p>
+      </header>
+
+      <section class="panel controls">
+        <div class="control-grid">
+          <div class="control-row">
+            <label for="datePicker">Match date</label>
+            <input id="datePicker" type="date" />
+          </div>
+          <div class="control-row">
+            <label for="timezone">Kickoff timezone</label>
+            <select id="timezone">
+              <option value="Europe/London">Europe/London</option>
+              <option value="UTC">UTC</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="runBtn" class="btn">Find Top 10 Picks</button>
+        <p id="status" class="status" aria-live="polite"></p>
+      </section>
+
+      <section class="panel" id="outputPanel">
+        <h2>Top picks</h2>
+        <div id="summary" class="summary"></div>
+        <ol id="picksList" class="picks"></ol>
+      </section>
+
+      <section class="panel" id="fixturesPanel">
+        <h2>3pm fixtures (Prem, Champ, League One, League Two)</h2>
+        <ul id="fixturesList" class="fixtures"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
